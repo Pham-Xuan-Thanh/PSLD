@@ -89,7 +89,7 @@ def get_dataset(config):
     # Checks
     assert isinstance(norm, bool)
 
-    if name.lower() == "cifar10":
+    if name.lower() == "cifar10" or name.lower() == "cifar100":
         assert image_size == 32
 
     # Construct transforms
@@ -98,6 +98,8 @@ def get_dataset(config):
         t_list.append(T.RandomHorizontalFlip())
     transform = T.Compose(t_list)
 
+    print("config:",config)
+    
     # Get dataset
     dataset_cls = get_module(category="datasets", name=name.lower())
     if dataset_cls is None:

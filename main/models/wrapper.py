@@ -123,7 +123,7 @@ class SDEWrapper(pl.LightningModule):
 
     def on_predict_end(self):
         if isinstance(self.sampler, get_module("samplers", "bb_ode")):
-            print(self.sampler.mean_nfe)
+            print("Sample mean NFE: ",self.sampler.mean_nfe)
 
     def configure_optimizers(self):
         opt_config = self.config.training.optimizer
