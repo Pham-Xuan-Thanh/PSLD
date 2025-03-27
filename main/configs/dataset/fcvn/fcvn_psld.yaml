@@ -93,7 +93,6 @@ diffusion:
     devices: [0]
     n_samples: 50000
     workers: 2
-    stride_type: quadratic
     batch_size: 64
     save_mode: image
     sample_prefix: "gpu"
